@@ -1,1 +1,15 @@
-<p>home works!</p>
+<div class="content">
+    <div class="searchbar">
+        <label>Search for a movie</label>
+        <input
+            type="text"
+            placeholder="Search for a movie"
+            [(ngModel)]="searchFilter"
+        />
+    </div>
+    <div class="movies">
+        <ng-container *ngFor="let movie of moviesList">
+            <app-movie-card [movie]="movie"></app-movie-card>
+        </ng-container>
+    </div>
+</div>
