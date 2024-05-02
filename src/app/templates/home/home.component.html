@@ -5,10 +5,11 @@
             type="text"
             placeholder="Search for a movie"
             [(ngModel)]="searchFilter"
+            (ngModelChange)="filterMovies($event)"
         />
     </div>
     <div class="movies">
-        <ng-container *ngFor="let movie of moviesList">
+        <ng-container *ngFor="let movie of filteredMoviesList">
             <app-movie-card [movie]="movie"></app-movie-card>
         </ng-container>
     </div>
